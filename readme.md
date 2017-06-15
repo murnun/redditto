@@ -1,4 +1,4 @@
-#Lumen+ReactJS+Webpack+SASS
+# Lumen+ReactJS+Webpack+SASS
 
 ## Overview
 Reditto is a simple web app that talks to Reddit API and displays posts for `Hot`and `New` categories by utilizing the tech stack listed above. It was created as a homework assignment from a job interview but could easily be leveraged as boilerplate by those who are looking for working configuration for the particular stack above. It can be helpful for projects moving from traditional `LAMP` stack to more modern stack.
@@ -7,7 +7,7 @@ Reditto is a simple web app that talks to Reddit API and displays posts for `Hot
 
 # Installation Instruction
 
-##Prerequisite
+## Prerequisite
 - PHP >= 5.6.4
 - OpenSSL PHP Extension
 - PDO PHP Extension
@@ -18,13 +18,13 @@ Reditto is a simple web app that talks to Reddit API and displays posts for `Hot
 
 In addition, I highly recommend using `LaraDock` for Docker containerization.
 
-Documentation: http://laradock.io/documentation/
+Documentation: http://laradock.io/documentation/<br />
 Github: https://github.com/laradock/laradock
 
 Setup is super quick and highly configurable!
 
 
-##Steps
+## Steps
 
 Once you have `LaraDock` running or copied this codebase to your existing PHP environment, please take following steps to complete the installation:
 
