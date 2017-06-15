@@ -1,0 +1,13 @@
+@import "mixin";
+
+.container .jumbotron, .container-fluid .jumbotron{
+  @include linear-gradient(#31B7D7, #EDAC7D);
+}
+
+.container .jumbotron, .container-fluid .jumbotron{
+  border-radius: 0;
+}
+.post .media, .media-body{
+  margin:5px;
+  padding:5px;
+}
