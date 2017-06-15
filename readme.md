@@ -32,6 +32,7 @@ Once you have `LaraDock` running or copied this codebase to your existing PHP en
 4. Install `composer` dependencies: `composer install`
 5. Create & set new app key for Lumen app: `php artisan key:generate`
 6. Install `node` dependencies: `npm install`
+7. Create a development build: `npm run dev`
 
 
 **You should be all set, open up your browser & go to: http://redditto.app**<br />
