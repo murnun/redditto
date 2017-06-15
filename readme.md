@@ -10,8 +10,6 @@ Reditto is a simple web app that talks to Reddit API and displays posts for `Hot
 ## Prerequisite
 - PHP >= 5.6.4
 - OpenSSL PHP Extension
-- PDO PHP Extension
-- Mbstring PHP Extension
 - Composer
 - Nodejs/NPM
 - Docker [optional]
