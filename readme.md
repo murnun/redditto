@@ -1,7 +1,7 @@
 # Lumen+ReactJS+Webpack+SASS
 
 ## Overview
-Reditto is a simple web app that talks to Reddit API and displays posts for `Hot`and `New` categories by utilizing the tech stack listed above. It was created as a homework assignment from a job interview but could easily be leveraged as boilerplate by those who are looking for working configuration for the particular stack above. It can be helpful for projects moving from traditional `LAMP` stack to more modern stack.
+Reditto is a simple SPA that talks to Reddit API and displays posts for `Hot`and `New` categories by utilizing the tech stack listed above.
 
 ![alt text](https://raw.githubusercontent.com/murnun/redditto/master/screenshot.png)
 
@@ -36,5 +36,3 @@ Once you have `LaraDock` running or copied this codebase to your existing PHP en
 
 
 **You should be all set, open up your browser & go to: http://redditto.app**<br />
-
-**If any questions, just let me know. I'd be happy to walk through.**
