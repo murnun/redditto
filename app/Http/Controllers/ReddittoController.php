@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Response;
+use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use Frankkessler\Guzzle\Oauth2\GrantType\PasswordCredentials;
 use Frankkessler\Guzzle\Oauth2\Oauth2Client;
@@ -33,29 +34,69 @@ class ReddittoController extends Controller
     }
 
     /**
-     * Fetches data from reddit endpoint as per given $category
+     * Fetches data from reddit endpoint as per given $page
      */
-    public function retrieveList($category, $count, $dir=null, $pageToken=null)
-    {
-        if(!in_array($category, ['hot','new'])){
+    public function retrieveList($page, $count, $dir=null, $pageToken=null, $urlQuery=null){
+
+        if(!in_array($page, ['hot','new', 'search'])){
             return response()->json([
               'status'=>false,
-              'message'=>'Category not found.'
+              'message'=>'Page not found.'
             ]);
         }
-        $pageParam = (isset($dir))? '&'.$dir.'='.$pageToken : '';
-        $urlQuery = $category.'.json?count='.$count.$pageParam;
 
-        $response = $this->_guzzle->get($this->_base_uri.'/'.$urlQuery, [
+        $pageParam = (isset($dir))? '&'.$dir.'='.$pageToken : '';
+        $endpoint = $page.'.json?count='.$count.$pageParam.$urlQuery;
+        // dd($endpoint);
+        $response = $this->_guzzle->get($this->_base_uri.'/'.$endpoint, [
             'headers' => [
               'User-Agent' => $this->_user_agent
             ]
         ]);
 
-        $response_body = (string) $response->getBody();
+        return (string) $response->getBody();
 
-        return response()->json($response_body);
     }
 
-    //
+    /**
+     * Fetches search result from reddit endpoint as per given search $term
+     */
+     public function search(Request $request){
+
+         $count = $request->input('count');
+         $dir = $request->input('dir');
+         $pageToken = $request->input('token');
+         $urlQuery = '&q='.$request->input('terms');
+
+         $response = $this->retrieveList('search', $count, $dir, $pageToken, $urlQuery);
+
+         $header = array(
+                'Content-Type' => 'application/json; charset=UTF-8',
+                'charset' => 'utf-8'
+            );
+
+         return response()->json($response, 200, $header, JSON_UNESCAPED_UNICODE);
+
+     }
+
+     /**
+      * Fetches search result from reddit endpoint as per given search $term
+      */
+      public function categoryPage($category, Request $request){
+
+          $count = $request->input('count');
+          $dir = $request->input('dir');
+          $pageToken = $request->input('token');
+          $urlQuery = '&q='.$request->input('terms');
+
+          $response = $this->retrieveList($category, $count, $dir, $pageToken, $urlQuery);
+
+          $header = array(
+                 'Content-Type' => 'application/json; charset=UTF-8',
+                 'charset' => 'utf-8'
+             );
+
+          return response()->json($response, 200, $header, JSON_UNESCAPED_UNICODE);
+
+      }
 }

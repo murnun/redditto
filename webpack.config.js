@@ -2,18 +2,20 @@
 const path              = require('path');
 const LiveReloadPlugin  = require('webpack-livereload-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 const webpack           = require('webpack');
 
 /*
 * Webpack config
 */
 const config = {
-  entry: path.resolve(__dirname, 'resources/js/app.js'),
+  entry: path.resolve(__dirname, 'resources/js/index.js'),
   output: { path: path.resolve(__dirname, 'public/js/'), filename: 'app.js' },
   watch:true,
   resolve:{
     extensions: ['.js','.jsx']
   },
+  devtool: 'source-map',
   module: {
     loaders: [
       {

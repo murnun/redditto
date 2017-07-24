@@ -1,8 +1,12 @@
+// Utilities
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Jumbotron, Image, Grid, Row, Col} from 'react-bootstrap';
-import TabWrapper from './components/TabWrapper';
-import style from '../sass/app.scss';
+
+//Dumb comps
+import {Jumbotron, Image, Glyphicon, Grid, Row, Col} from 'react-bootstrap';
+import TabWrapper from './TabWrapper';
+import SearchModal from './SearchModal';
+import style from '../../sass/app.scss';
 
 class App extends React.Component{
 
@@ -11,12 +15,15 @@ class App extends React.Component{
                 <Row className="show-grid">
                     <Jumbotron>
                       <Row className="show-grid">
-                        <Col md={3}>
+                        <Col md={2}>
                           <Image src="images/logo.png" responsive />
                         </Col>
-                        <Col md={9}>
-                          <h1>Redditto!</h1>
+                        <Col md={8}>
+                          <h1>Redditto</h1>
                           <p>Re-doing reddit as redditto...</p>
+                        </Col>
+                        <Col md={2}>
+                          <SearchModal />
                         </Col>
                       </Row>
                     </Jumbotron>
@@ -31,4 +38,5 @@ class App extends React.Component{
 
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+
+export default App;

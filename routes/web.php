@@ -18,4 +18,5 @@ $app->get('/', function () use ($app) {
 /*
   Route definition
 */
-$app->get('/api/{category}/{count}[/{dir}/{pageToken}]', 'ReddittoController@retrieveList');
+$app->get('/api/search', 'ReddittoController@search');
+$app->get('/api/{category}', 'ReddittoController@categoryPage');

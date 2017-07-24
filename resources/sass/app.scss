@@ -11,3 +11,39 @@
   margin:5px;
   padding:5px;
 }
+.modal-dialog{
+  margin: 20% auto;
+}
+.modal-content, .modal-body{
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+}
+.form-group{
+  margin-bottom:0;
+}
+.input-group-addon{
+  font-size:25px;
+}
+.form-control{
+  height: 65px;
+  font-size: 35px;
+}
+.btn{
+  padding: 16px 14px;
+  font-size: 22px;
+}
+.input-group-addon, .input-group .form-control{
+  background-color: #000;
+  color: #fff;
+  border-color: transparent;
+  opacity: 0.6;
+}
+.input-group > .form-control:focus, .btn:focus {
+    outline: none !important;
+    border: 0;
+    box-shadow: none;
+}
+.nav-tabs>li>a{
+  border-color: #ccc;
+}

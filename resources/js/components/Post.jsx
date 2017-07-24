@@ -10,9 +10,9 @@ export default class Post extends React.Component{
 
     _postTemplate(data){
       const post = data.post.data;
-      
+
       //if thumbnails come in as one of below, no thumbnails rendered
-      const defaults = ['default', 'self', 'image', 'nsfw'];
+      const defaults = ['default', 'self', 'image', 'nsfw', 'spoiler'];
 
       return <Media>
                 {(defaults.indexOf(post.thumbnail)==-1) && <Media.Left align="top">
