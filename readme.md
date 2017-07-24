@@ -37,7 +37,7 @@ Once you have `LaraDock` running or copied this codebase to your existing PHP en
 
 **You should be all set, open up your browser & go to: http://redditto.app**<br />
 
-##TODOs
+## TODOs
 
 1. Unit testing
 2. Client side caching to minimize HTTP calls
